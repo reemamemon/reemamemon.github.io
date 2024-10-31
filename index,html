@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link type="image/png"  rel="icon" href="assets\img\profile-icon.png">
+    <title>Gul Hassan </title>
+    
+    <style>
+        /* Animation styles */
+        #typing-animation {
+            position: relative;
+            font-size: 20px;
+            font-weight: bold;
+            color: #5361FF;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(20, end) infinite;
+        }
+
+        #typing-animation:before {
+            content: "";
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #ccc;
+            animation: typing-cursor 0.5s ease-in-out infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes typing-cursor {
+            from {
+                width: 3px;
+            }
+
+            to {
+                width: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Gul Hassan</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#achiements" class="nav__link">Resume</a></li>
+                    <li class="nav__item"><a href="#portfolio" class="nav__link ">Projects</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <li class=" nav__item">
+                        <a href="https://drive.google.com/file/d/1rw8NQ9YO76yhLGPRjOsFEyco_XgZ1-Wd/view?usp=sharing"
+                            class=" download__cv" target="_blank">CV <i class='bx bxs-download bx-tada'></i></a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+
+        <!--===== HOME =====-->
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+                <h1 class="home__title"><span>HE</span><br>LLO.</h1>
+
+                <h2 class="ml" style="color: white; padding-left: 10px;">I'M MACHINE LEARNING ENGINEER</h2>
+
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt'></i>Scroll down</a>
+                </div>
+                <img src="assets/img/profileimg.png" alt="" class="home__img">
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about">
+            <h2 class="section-title"> <i class='bx bxs-user '></i> <span></span>About</h2>
+
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/profileimg.png" alt="">
+                </div>
+
+                <div>
+                    <h3 class="about__subtitle">I'm Gul Hassan</h3>
+                    <!-- Element to contain animated typing -->
+                    <span class="ani" id="typing-animation" style="color: rgba(0, 0, 0, 0.69); "></span>
+
+                    <script>
+
+                        // Initialize the typing animation
+                        const typingAnimationElement = document.getElementById('typing-animation');
+
+                        // Create an array of typing text
+                        const typingTexts = [
+                            'Machine learning engineer  ',
+                            'Deep learning engineer  ',
+                            'Coder on LeetCode ',
+                            'Problem solver',
+                            'Artical writer ',
+                            'Critical thinker'
+                        ];
+                        // Create a function to display the typing animation for a given text
+                        function playTypingAnimation(text) {
+                            // Loop through each character and add it to the element
+                            for (let i = 0; i < text.length; i++) {
+                                setTimeout(() => {
+                                    typingAnimationElement.textContent += text[i];
+                                }, i * 100); // Increase the delay to slow down the typing animation
+                            }
+
+                            // Once the animation is complete, toggle the cursor visibility
+                            setTimeout(() => {
+                                toggleCursor();
+                            }, text.length * 120);
+
+                            // Function to toggle cursor visibility
+                            function toggleCursor() {
+                                if (typingAnimationElement.textContent.endsWith('|')) {
+                                    typingAnimationElement.textContent = typingAnimationElement.textContent.slice(0, -1);
+                                } else {
+                                    typingAnimationElement.textContent += '|';
+                                }
+                            }
+
+                            // Restart the typing animation loop
+                            setTimeout(() => {
+                                typingAnimationElement.textContent = ''; // Clear the text
+                                playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]); // Start over with the next text
+                            }, (text.length + 1) * 120); // Wait for text to be fully typed before restarting
+                        }
+
+                        // Start the typing animation loop
+                        playTypingAnimation(typingTexts[0]);
+
+                    </script>
+
+                    <br>
+                    <br>
+                    <p class="about__text">
+                        I am a fresh graduate of Information Technology on merit-based scholersip. As an AI enthusiast, it's quite fascinating to solve
+                        real-world problems using <b>Machine Learning</b> and <b>Deep Learing</b> for good.
+                        <br><br>
+                        Driven by this passion for applying Machine Learning and Deep Learning to solve real-world problems.
+                         I've honed my skills through personal projects, LeetCode challenges, and technical article writing. 
+                         My active participation in international hackathons (3 awards) showcases my strong leadership, 
+                         communication, and teamwork ability, my experience as a Data Analyst on Fiverr further strengthens my 
+                         practical data analysis expertise.
+                        <br><br>
+                        <h3>Technical Skills, Tools, & Programming</h3>
+                        <b>Skills:</b>  Data analysis, Machine learning, Deep learning, Natural Language processing, Data structures and algorithms.
+                        <br>
+
+                        <b>Programming languages: </b>
+                        Python, Flask, C++, Javascript, PHP.
+                        <br>
+                        <b>Tools: </b>
+                        Google spreadsheets, Git and Github, VS code, Google Colab, Anaconda.
+                        <br>
+                        <b>Operating system: </b>
+                        Ubuntu, Kali Linux,  Windows.
+
+                    </p>
+                    <br>
+                    <div class="about__social">
+                        <a href="https://www.linkedin.com/in/gul-hassan-7b188b202/" class="" target="_blank"><i class='about__social-icon bx bxl-linkedin bx-tada-hover'
+                                style="font-size: 25px;"></i></a>
+                        <a href="https://github.com/Gulhassan786" class="" target="_blank"><i class='about__social-icon bx bxl-github bx-tada-hover'
+                                style="font-size: 25px;"></i></a>
+                        <a href="https://medium.com/@gulhassanh49" class="" style="font-size: 25px;" target="_blank"><i class='about__social-icon bx bxl-medium bx-tada-hover'></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a href="https://drive.google.com/file/d/1rw8NQ9YO76yhLGPRjOsFEyco_XgZ1-Wd/view?usp=sharing"
+                target="_blank"> <button class="contact__button">CV 
+                    <i class='bx bxs-download bx-tada'style="font-size: 18px;"></i> </button></a>
+
+        </section>
+
+        <!-- Achivements section -->
+        <section class="about section" id="achiements">
+            <h2 class="section-title"><i class="bx bxs-award " ></i>Achievements</h2>
+            <div class="about__container bd-grid">
+
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx bxs-medal bx-tada"></i>FYP (2nd Place)
+                    </h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col">
+                            <span style="color: #5965e9; text-align: left;">University Of Sindh</span>
+                        </div>
+                        <div class="col"> <span style="color: #5965e9; text-align:right;">Jan’24 —  Feb’24</span></div>
+                    </div>
+                   
+                    <p class="about__text">
+                        <ol>
+                            <li>Achieved <b>#2 Ranking</b> in final year project (FYP) in 100+ participants, 30+ FYP’s.</li>
+                            <br>
+                        <p> <i>Note! check details of FYP below in projects section.</i></p>
+                        </ol>
+                       
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx bxs-medal bx-tada"></i>Finalist (2 place)
+                    </h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col">
+                            <span style="color: #5965e9; text-align: left;">WorldInnovationDay Hack</span>
+                        </div>
+                        <div class="col"> <span style="color: #5965e9; text-align:right;">Apr’22 —  May’22</span></div>
+                    </div>
+                   
+                    <p class="about__text">
+                        <ol>
+                           <li> Analyzed disaster data (floods, tornadoes, landslides) using Numpy, Pandas, Matplotlib, and Seaborn, leveraging Google Sheets for data management.
+                        </li> <br>
+                        <li>Created impactful reports revealing trends and the human cost of disasters, highlighting the number of people severely and partially affected.</li>
+                        </ol>
+                    </p>
+
+                    <div class="row" style="display:flex;">
+                        <div class="col-6">
+                            <a href="https://www.youtube.com/live/PekZczFhDi4?si=MWKkObYGxrnk0Oyy&t=1630" target="_blank" rel="noopener noreferrer">
+                                <abbr title="Pitch of the project"><i class="about__social-icon bx bxs-videos bx-tada-hover" ></i>
+                            </a>
+                        </div>
+                        <!-- <div class="col-4">
+                            <i class="about__social-icon bx bxl-github" style="font-size: 30px; "></i>
+                        </div> -->
+                        <div class="col-6">
+                           <abbr title="Badge from org"> <a href="https://au.badgr.com/public/assertions/5ERL7-jGTMenN76TLHYq6g?identity__email=gulhassanh49@gmail.com" target="_blank">
+                            <i class='about__social-icon bx bxs-badge-check bx-tada-hover' ></i></a></abbr>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 2nd achivement -->
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx bxs-medal bx-tada" ></i>Finalist (3rd place)
+                    </h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col">
+                            <span style="color: #5965e9; text-align: left;">FormulaAI Hack</span>
+                        </div>
+                        <div class="col"> <span style="color: #5965e9; text-align:right;">Apr’22 —  May’22</span></div>
+                    </div>
+
+                    <p class="about__text" style="margin-top: 10px;">
+                    <ol>
+                        <li>Employed data pre-processing techniques like feature engineering, data imputation, and text preprocessing.</li> <br>
+                        <li>Trained the ML model on historical race data to predict race outcomes based on weather, track characteristics, and past performance.</li>
+                        <!-- <li>Evaluated model performance using Accuracy, F1 score, and Precision and Recall. </li> -->
+                    </ol>  
+                    </p>
+                    
+                    <div class="row" style="display:flex;">
+                        <div class="col-6">
+                            <a href="https://www.youtube.com/watch?v=2yS0BoQS-3Q" target="_blank" rel="noopener noreferrer">
+                               <abbr title="Pitch of the project"><i class="about__social-icon bx bxs-videos bx-tada-hover" ></i></abbr> </a>
+                        </div>
+                        <!-- <div class="col-4">
+                            <i class="about__social-icon bx bxl-github" style="font-size: 30px; "></i>
+                        </div> -->
+                        <div class="col-6">
+                           <abbr title="Badge from org"> <a href="https://au.badgr.com/public/assertions/TeMHvYAKQTaUC5CP2eYBAQ" target="_blank">
+                            <i class='about__social-icon bx bxs-badge-check bx-tada-hover' ></i></a></abbr>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Achievment 3rd -->
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx bxs-medal bx-tada" ></i>RunnerUp</h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col-6">
+                            <span style="color: #5965e9; text-align: center;">WorldInnovationDay Hack</span>
+                        </div>
+                        <div class="col-6"> <span style="color: #5965e9; text-align: center;">Apr’21 —  May’21</span>
+                        </div>
+                    </div>
+                
+                    <p class="about__text">
+                     <ol>
+                        <li>  Leveraged Machine Learning skills and created a model that can take food names, have a fridge at home or not, season, 
+                            food type, food quantity, and number of people, and predict whether food will be wasted or consumed properly. </li>
+                            <br>
+                            <li>Evaluated model performance using F1 score, Cohen's Kappa, and confusion matrix to provide a detailed analysis 
+                                of classification effectiveness and error distribution.</li>
+                     </ol>
+                    </p>
+
+                    <div class="row" style="display:flex;">
+                        <div class="col-6">
+                          <abbr title="Pitch of project">  <a href="https://www.youtube.com/live/EpF-33rksoU?si=fbBiE135TK9aM7jY&t=1525" target="_blank" rel="noopener noreferrer">
+                                <i class="about__social-icon bx bxs-videos bx-tada-hover"></i></a></abbr>
+                        </div>
+                        <!-- <div class="col-4">
+                            <i class="about__social-icon bx bxl-github" style="font-size: 30px; "></i>
+                        </div> -->
+                        <div class="col-6">
+                          <abbr title="Badge from org"> <a href="https://au.badgr.com/public/assertions/Nn9MpxPVRW2-JIJMm2N3vQ?identity__email=gulhassanh49@gmail.com" target="_blank">
+                            <i class='about__social-icon bx bxs-badge-check bx-tada-hover' ></i></a> </abbr>
+                        
+                        </div>
+                    </div>
+                </div>
+
+               
+                <!-- 4th card -->
+
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx bxs-medal bx-tada" ></i>Regional Ambassador</h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col-12">
+                            <span style="color: #5965e9; text-align: center;">Hackmakers</span>
+                        </div>
+                        <div class="col-6"> <span style="color: #5965e9; text-align: center;">Apr’22 —   May’22</span>'
+                       
+                        </div>
+                    </div>
+                
+                    <p class="about__text">
+                        <ol>
+                            <li>Competed against 250+ applicants and secured a position in the top 20 ambassadors with 
+                                <a href="https://www.hackmakers.com/" style="color: #5965e9;">Hackmaker.</a></li> <br>
+                            <li>Consistently ranked among the top 3 of 20 regional ambassadors, surpassing MoU signing targets by 99%.</li> <br>
+                            <li>Secured 6+ strategic partnerships between Hackmakers, universities, student groups, and companies.</li>
+                        </ol>
+                    </p>
+
+                    <div class="row" style="display:flex;">
+                        <div class="col-12">
+                            <a href="https://drive.google.com/file/d/10PXvoPI2t7wQfN18Q0VT_nKr1Rac9fTN/view?usp=sharing" target="_blank"><i class='about__social-icon bx bxs-badge-check bx-tada-hover' ></i></a>
+                        
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx bxs-medal bx-tada" ></i>Scholerships</h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col-12">
+                            <span style="color: #5965e9; text-align: center;">Higher Education Commission (HEC) and Prime Minister (PM)</span>
+                        </div>
+                        <!-- <div class="col-6"> <span style="color: #5965e9; text-align: center;"></span>
+                        </div> -->
+                    </div>
+                
+                    <p class="about__text">
+                        <ol>
+                            <li>Secured merit-based scholarship by HEC</li> <br>
+                            <li>Awarded a laptop as part of the PM's Scheme for ranking in the top 20 of the batch. </li>
+                        </ol>
+                    </p>
+                </div>
+
+
+            </div>
+
+
+             <!-- Portfolio section-->
+        <section class="about section" id="portfolio">
+
+            <h2 class="section-title"><i class="bx bxs-card "></i> <span></span>Projects</h2>
+            <div class="about__container bd-grid">
+                
+
+                <!-- 1st card project -->
+
+                <div class="card">
+
+                    <div class="portfolio__img">
+                        <img src="assets/img/voice.jpg" alt="image showing mic">
+                        <a href="https://drive.google.com/file/d/1QZz4oI83lXkKqG-AcVcJi1IoOvxJVQVf/view?usp=sharing" class="portfolio__link-name" target="_blank" title="Thesis link">
+                        <div class="portfolio__link">
+                            Thesis
+                        </div>
+                    </a>
+                    </div> <br>
+                    <h2 class="about__subtitle"><i class="bx bxs-music bx-tada"></i> <span></span>Bird's voice classification
+                    </h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col">
+                            <span style="color: #5965e9; text-align: left;">TensorFlow | Pandas | Numpy | Librosa | Flask | HTML | CSS
+
+                            </span>
+                        </div>
+                        
+                    </div>
+                   
+                    <p class="about__text">
+
+                        <ol>
+                            <li>Preprocessed audio with librosa to generate mel spectrograms and extract features for deep learning.</li> <br>
+    <li>Developed a deep CNN using TensorFlow for multi-class image classification, incorporating six convolutional layers with filters ranging from 16 to 1024.</li> <br>
+    <li>Achieved 80% accuracy on test data, evaluated model performance using F1 score, precision, recall, and confusion matrix.</li> <br>
+    <li>Built a Flask web interface with HTML/CSS for user interaction with the classification model.</li>
+                        </ol>
+                        </p>
+
+                  
+                 <abbr title="Thesis link"><a href="https://drive.google.com/file/d/1QZz4oI83lXkKqG-AcVcJi1IoOvxJVQVf/view?usp=sharing" target="_blank"><i class="about__social-icon bx  bx-book" style="font-size: 30px;"></i></a></abbr>
+                </div>
+
+
+                <!-- 2nd project card -->
+
+                <div class="card">
+
+                    <div class="portfolio__img">
+                        <img src="assets/img/sentiment.jpg" alt="">
+                       <abbr title="Click to view code on GitHub">
+                        <a href="https://github.com/Gulhassan786/Sentiment-Analysis" class="portfolio__link-name" target="_blank">
+                            <div class="portfolio__link">
+                               View Code
+                            </div></a>
+                       </abbr>
+    
+                    </div> <br>
+                    <a href="https://github.com/Gulhassan786/Sentiment-Analysis" class="portfolio__link-name" target="_blank"> <h2 class="about__subtitle"><i class="bx bxs-happy bx-tada" ></i> <span></span>Sentiment-Analysis
+                    </h2></a>
+                    <div class="row hack" style="display:block;">
+                        <div class="col">
+                            <span style="color: #5965e9; text-align: left;">Sklearn| Support Vector Machine  | Pandas | Natural Language Toolkit | Streamlit | Metrics | Tfidf | Pickle
+                            </span>
+                        </div>
+                        
+                    </div>
+                   
+                    <p class="about__text">
+                        <ol>
+                            <li>The model predicts sentiment by analyzing linguistic patterns, emotional cues, and contextual features within the text.</li> <br>
+    <li>Developed NLP pipeline using NLTK to optimize text preprocessing and sentiment classification workflows.</li> <br>
+    <li>Utilized TF-IDF vectorizer for feature extraction and implemented an SVM model.</li> <br>
+    <li>Selected Support Vector Machine (SVM) from five machine learning algorithms due to its superior performance, 
+        achieving an accuracy of 0.89, with precision, recall, and F1-scores of 0.89.</li> <br>
+    <li>Created a Streamlit interface for real-time sentiment analysis and deployment.</li>
+                        </ol>
+                        </p>
+
+               <abbr title="Code link on GitHub">   <a href="https://github.com/Gulhassan786/Sentiment-Analysis">
+                <i class="about__social-icon bx bxl-github bx-tada-hover" ></i></a></abbr>
+                <abbr title="Webapp link"> <a href="https://sentiment-detection.streamlit.app/">
+                    <i class="about__social-icon bx bx-globe bx-tada-hover" ></i></a></abbr>
+                </div>
+
+
+                    <!-- 3rd project card -->
+
+                    <div class="card">
+
+                        <div class="portfolio__img">
+                            <img src="assets/img/handdigit.png" alt="">
+                            <abbr title="Click to view code on HuggingFace">
+                                <a href="https://huggingface.co/spaces/Gul-Hassan/Digit-recognation/tree/main" class="portfolio__link-name" target="_blank">
+                                    <div class="portfolio__link">
+                                       View Code
+                                    </div></a>
+                            </abbr>
+        
+                        </div> <br>
+                        <a href="https://huggingface.co/spaces/Gul-Hassan/Digit-recognation/tree/main" class="portfolio__link-name" target="_blank">  <h2 class="about__subtitle"><i class="bx bxs-edit-alt bx-tada" ></i> <span></span> Handwritten digit classification
+                        </h2> </a>
+                        <div class="row hack" style="display:block;">
+                            <div class="col">
+                                <span style="color: #5965e9; text-align: left;">Sklearn| SVM  | Pandas | Streamlit | HuggingFace | Pickle
+                                </span>
+                            </div>
+                            
+                        </div>
+                       
+                        <p class="about__text">
+                            <ol>
+                                <li>Preprocessed the MNIST dataset through normalization and resizing to enhance data quality and
+                                     model performance.</li> <br>
+                                <li>Developed and serialized a Support Vector Machine (SVM) classifier for digit recognition, employing
+                                     robust techniques to optimize accuracy.</li> <br>
+                                <li>Achieved 97.77% accuracy with an SVM classifier on validation data and 97.82% accuracy on 
+                                    test data, with detailed confusion matrices demonstrating high classification performance across digit categories.</li> <br>
+                                <li>Designed and deployed a Streamlit interface for the model, hosting the application on Hugging Face for accessible and interactive digit recognition.</li>
+                            </ol>
+
+                            </p>
+    
+                  <a href="https://huggingface.co/spaces/Gul-Hassan/Digit-recognation/tree/main">
+                    <abbr title="Code link on HuggingFace"> <i class="about__social-icon bx bxl-github bx-tada-hover" ></i></abbr></a>
+                 
+                <abbr title="Webapp link">
+                    <a href="https://huggingface.co/spaces/Gul-Hassan/Digit-recognation"><i class="about__social-icon bx bx-globe bx-tada-hover" ></i></a> 
+                </abbr>  
+
+                    </div>
+    
+               
+
+        </section>
+
+<!-- Education -->
+
+            <h2 class="section-title"><i class="bx bxs-book " ></i>Education</h2>
+            <div class="about__container bd-grid">
+
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx bxs-graduation bx-tada" ></i>BS Information Technology </h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col">
+                            <span style="color: #5965e9; text-align: left;">University Of Sindh</span>
+                        </div>
+                        <div class="col"> <span style="color: #5965e9; text-align:right;">Jan’20  —  Feb’24</span></div>
+                    </div>
+                    <p class="about__text">
+                        <b>GPA 3.35</b> <br>
+                        <br>
+                        <b>Core courses: </b>Computer Vision, Data Science, Discrete Mathematics, Statistics, Linear Algebra, Calculus, DSA, Python, C++, Java, Web development, Android app development, and software engineering.
+                    </p>
+
+                </div>
+
+                <div class="card">
+                    <h2 class="about__subtitle"><i class="bx  bxs-graduation bx-tada" ></i>Higher Secondary School
+                    </h2>
+                    <div class="row hack" style="display:block;">
+                        <div class="col">
+                            <span style="color: #5965e9; text-align: left;">Gov: Ali baba degree college</span>
+                        </div>
+                        <div class="col"> <span style="color: #5965e9; text-align:right;">Jan’20 —  Dec’19</span></div>
+                    </div>
+                    <p class="about__text">
+                        <b>Pre-medical</b> <br>
+                        <!-- <b>Elective courses:</b> Computer Vision, Data Science, DSA, Python, Web development, Android app development, Statistics, Linear Algebra, Calculus, C++, Java, software engineering -->
+                    </p>
+
+                </div>
+
+            </div>
+
+
+                <!-- Experience -->
+
+                <h2 class="section-title"><i class="bx bxs-pin " ></i>Experience</h2>
+                <div class="about__container bd-grid">
+    
+                    <div class="card">
+                        <h2 class="about__subtitle"><i class="bx bx-medal bx-tada"></i>Regional Ambassador
+                        </h2>
+                        <div class="row hack" style="display:block;">
+                            <div class="col">
+                                <span style="color: #5965e9; text-align: left;">Hackmakers</span>
+                            </div>
+                            <div class="col"> <span style="color: #5965e9; text-align:right;">Apr’22 —  May’22</span></div>
+                        </div>
+                       
+                        <p class="about__text">
+                           <ol>
+                            <li>Partnerships were secured through MoUs with over 2 universities, 2 student clubs/organizations, and 2 companies.</li> <br>
+    <li>Collaboration and growth were fostered within the Hackmakers community in Pakistan through strategic partnerships.</li>
+                        </ol>
+                            
+                        </p>
+    
+                    </div>
+
+    
+                    <div class="card">
+                        <h2 class="about__subtitle"><i class="bx bx-medal bx-tada"></i>Data Analyst
+                        </h2>
+                        <div class="row hack" style="display:block;">
+                            <div class="col">
+                                <span style="color: #5965e9; text-align: left;">Fiverr</span>
+                            </div>
+                            <div class="col"> <span style="color: #5965e9; text-align:right;">Dec’20 —  Dec’21</span></div>
+                        </div>
+                       
+                        <p class="about__text">
+                           <ol>
+                            <li>Partnered with international clients on over 2 analytical projects, providing data-driven insights and solutions.</li> <br>
+                            <li>Developed and maintained interactive dashboards using Google Sheets and Data Studio to track key performance metrics.</li> <br>
+                            <li>Delivered comprehensive reports that identified trends, supported decision-making, and improved business outcomes.</li>
+                           </ol>
+
+                        </p>
+    
+                    </div>
+    
+                    <!-- 2nd achiement -->
+                    <div class="card">
+                        <h2 class="about__subtitle"><i class="bx bx-medal bx-tada" ></i>Moderator and Trainer
+                        </h2>
+                        <div class="row hack" style="display:block;">
+                            <div class="col">
+                                <span style="color: #5965e9; text-align: left;">iCode Guru, USA</span>
+                            </div>
+                            <div class="col"> <span style="color: #5965e9; text-align:right;">Dec’20 — June’22</span></div>
+                        </div>
+    
+                        <p class="about__text" style="margin-top: 10px;">
+                            <ol>
+                                <li>Taught 4+ courses on data analysis using Google spreadsheets,<a style="color: #5965e9; text-align: center;" href="https://web.facebook.com/photo.php?fbid=320120893452731&set=t.100063644695494&type=3" target="_blank"><u> Data Analysis1</u></a>,
+                                     and <a style="color: #5965e9; text-align: center;" href="https://web.facebook.com/photo/?fbid=285552163576271&set=pb.100063644695494.-2207520000" target="_blank"> <u>Data Analysis2</u></a>.</li> <br>
+    <li>Instructed in a 5-week long <a style="color: #5965e9; text-align: center;" href="https://docs.google.com/spreadsheets/d/1_QuQTw6JIQN6o3yX6sQFysEtSk9nwXxjSCGZOgJY3tk/edit?usp=sharing" target="_blank"> <u>IELTS course</u></a>.</li> <br>
+    <li>Designed and conducted a comprehensive Python course, covering fundamentals to intermediate levels 
+        and incorporating problem-solving techniques from LeetCode.</li> <br>
+    <li>Conducted workshops on Python, Data Analysis, VS Code, Git, and GitHub at iCodeGuru.</li> <br>
+    <li>Managed workshops as a lead, covering areas like Data Structures and Algorithms, 
+        <a style="color: #5965e9; text-align: center;" href="https://web.facebook.com/photo/?fbid=327509042411855&set=pb.100063644695494.-2207520000" target="_blank"><u>Computer Vision</u></a>, 
+        Machine Learning,
+        <a style="color: #5965e9; text-align: center;" href="https://web.facebook.com/photo/?fbid=324780862986734&set=pb.100063644695494.-2207520000" target="_blank"><u>Data Manipulation</u></a>,
+         <a style="color: #5965e9; text-align: center;" href="https://web.facebook.com/photo/?fbid=334381345360019&set=pb.100063644695494.-2207520000" target="_blank"> <u>Data Analysis</u></a>,
+          and  iCodeGuru and the 
+          <a style="color: #5965e9; text-align: center;" href="https://www.usindh.edu.pk/" target="_blank" rel="noopener noreferrer"> <u>University of Sindh</u></a>.</li>
+
+                            </ol>
+
+                           
+                        </p>
+                            
+                    </div>
+
+                </div>
+
+
+
+
+                <h2 class="section-title"><i class='bx  bxs-book-open' ></i> <span></span>MOOCs</h2>
+                <div class="about__container bd-grid">
+                    
+                    <!-- 1st course -->
+                    <div class="card">
+                        <h2 class="about__subtitle"><i class="bx bx-tada bx-book-reader"></i>Stat 453 Introduction to deep learning and generative models</h2>
+                        <div class="row hack" style="display:block;">
+                            <div class="col">
+                                <span style="color: #5965e9; text-align: left;"> <a href="https://pages.stat.wisc.edu/~sraschka/teaching/stat453-ss2020/" style="color: #5965e9;"><u>UW-Madison</u></a></span>
+                            </div>
+                
+                        </div>
+    
+                    </div>
+
+
+                    <!-- 2nd course -->
+
+                    <div class="card">
+                        <h2 class="about__subtitle"><i class="bx bx-tada bx-book-reader"></i>Prompt Engineering</h2>
+                        <div class="row hack" style="display:block;">
+                            <div class="col">
+                                <span style="color: #5965e9; text-align: left;"> <a href="https://www.deeplearning.ai/" style="color: #5965e9;"><u>deeplearning.ai</u></a></span>
+                            </div>
+                
+                        </div>
+    
+                    </div>
+                
+                    <!-- 3rd course -->
+
+                    <div class="card">
+                        <h2 class="about__subtitle"><i class="bx bx-tada bx-book-reader"></i>Machine Learning</h2>
+                        <div class="row hack" style="display:block;">
+                            <div class="col">
+                                <span style="color: #5965e9; text-align: left;"> Youtube, iCodeGuru, Kaggle</span>
+                            </div>
+                
+                        </div>
+    
+                    </div>
+
+        </section>
+
+
+
+
+
+        <!--===== SKILLS =====-->
+        <!-- <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills__container bd-grid">
+                <div class="skills__box">
+                    <h3 class="skills__subtitle">Development</h3>
+                    <span class="skills__name">Html</span>
+                    <span class="skills__name">Css</span>
+                    <span class="skills__name">Javascript</span>
+                    <span class="skills__name">Scss</span>
+                    <span class="skills__name">React</span>
+                    <span class="skills__name">Vue</span>
+
+                    <h3 class="skills__subtitle">Design</h3>
+                    <span class="skills__name">Figma</span>
+                    <span class="skills__name">Adobe XD</span>
+                    <span class="skills__name">Photoshop</span>
+
+                </div>
+
+                <div class="skills__img">
+                    <img src="assets/img/skill.jpg" alt="">
+                </div>
+            </div>
+        </section> -->
+
+        <!--===== PORTFOLIO =====-->
+        <!-- <section class="portfolio section" id="portfolio">
+            <h2 class="section-title">Portfolio</h2>
+
+            <div class="portfolio__container bd-grid">
+                <div class="portfolio__img">
+                    <img src="assets/img/work1.jpg" alt="">
+
+                    <div class="portfolio__link">
+                        <a href="#" class="portfolio__link-name">View details</a>
+                    </div>
+
+                </div>
+                <div class="portfolio__img">
+                    <img src="assets/img/work2.jpg" alt="">
+
+                    <div class="portfolio__link">
+                        <a href="#" class="portfolio__link-name">View details</a>
+                    </div>
+                </div>
+                <div class="portfolio__img">
+                    <img src="assets/img/work3.jpg" alt="">
+
+                    <div class="portfolio__link">
+                        <a href="#" class="portfolio__link-name">View details</a>
+                    </div>
+                </div>
+                <div class="portfolio__img">
+                    <img src="assets/img/work4.jpg" alt="">
+
+                    <div class="portfolio__link">
+                        <a href="#" class="portfolio__link-name">View details</a>
+                    </div>
+                </div>
+                <div class="portfolio__img">
+                    <img src="assets/img/work5.jpg" alt="">
+
+                    <div class="portfolio__link">
+                        <a href="#" class="portfolio__link-name">View details</a>
+                    </div>
+                </div>
+                <div class="portfolio__img">
+                    <img src="assets/img/work6.jpg" alt="">
+
+                    <div class="portfolio__link">
+                        <a href="#" class="portfolio__link-name">View details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+ -->
+
+
+
+        <!--===== CONTACT =====-->
+        <section class="contact section" id="contact">
+            <h2 class="section-title"><i class='bx bxs-contact '></i> <span></span>Contact</h2>
+
+            <div class="contact__container bd-grid">
+                <div class="contact__info">
+                    <h3 class="contact__subtitle"><i class='bx bxs-envelope bx-tada' style="font-size: 20px;"> </i> <span></span>EMAIL</h3>
+                   <a href="mailto:gul.hassan.h43@gmail.com"><span class="contact__text"><u>gul.hassan.h43@gmail.com</u></span></a>
+
+                    <h3 class="contact__subtitle"><i class='bx bxs-phone bx-tada' style="font-size: 20px;"></i> <span></span>PHONE</h3>
+                    <span class="contact__text">+92 (348) 2920 106</span>
+
+                    <h3 class="contact__subtitle"><i class='bx bxs-home bx-tada'style="font-size: 20px;"></i> <span></span>ADRESS</h3>
+                    <span class="contact__text">Sindh,Pakistan</span>
+                </div>
+
+                <div class="contact__form">
+                    <form id="FORM_ID" method="POST" class="contact__form"
+                        action="https://script.google.com/macros/s/AKfycbwbcQoptyB7GFCE7in7064vo9gbSvKjoucA_vE-y4UtvKFecME7X0gZtCQAl5lxzdZH/exec">
+
+                        <input id="Name" type="text" placeholder="Name" name="Name" class="contact__input" required>
+                        <input id="Email" type="email" placeholder="Email" name="Email" class="contact__input" required>
+
+                        <textarea id="Message" name="Message" rows="10" class="contact__input"></textarea>
+                        <button type="submit" class="contact__button"><i class='about__social-icon bx bx-send bx-tada'></i></button>
+                    </form>
+
+                    <script type="text/javascript">
+                        window.addEventListener("DOMContentLoaded", function () {
+                            const yourForm = document.getElementById('FORM_ID');
+                            if (yourForm) {
+                                yourForm.addEventListener("submit", function (e) {
+                                    e.preventDefault();
+                                    const data = new FormData(yourForm);
+                                    const action = e.target.action;
+                                    fetch(action, {
+                                        method: 'POST',
+                                        body: data,
+                                    })
+                                        .then(response => {
+                                            if (response.ok) {
+                                                // Reset form fields
+                                                yourForm.reset();
+                                                alert("Form submitted successfully!");
+                                            } else {
+                                                alert("Failed to submit form. Please try again.");
+                                            }
+                                        })
+                                        .catch(error => {
+                                            console.error('Error:', error);
+                                            showAlert("Sent sucessfuly!");
+                                            yourForm.reset();
+                                        });
+                                });
+                            } else {
+                                console.error('Form element with ID "FORM_ID" not found.');
+                            }
+                        });
+
+                        function showAlert(message) {
+                            const alertElement = document.createElement('div');
+                            alertElement.classList.add('alert');
+                            alertElement.textContent = message;
+                            document.body.appendChild(alertElement);
+
+                            // Automatically dismiss the alert after 3 seconds (3000 milliseconds)
+                            setTimeout(function () {
+                                if (alertElement) {
+                                    alertElement.remove();
+                                }
+                            }, 6000);
+                        }
+
+                    </script>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+            <div class="footer__data">
+                <h2 class="footer__title">GUL HASSAN</h2>
+
+                <p class="footer__text">I'm Gul Hassan and this is my personal website</p>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__title">EXPLORE</h2>
+                <ul>
+                    <li><a href="#home" class="footer__link">Home</a></li>
+                    <li><a href="#about" class="footer__link">About</a></li>
+                    <li><a href="#achiements" class="footer__link">Resume</a></li>
+                    <li><a href="#portfolio" class="footer__link">Projects</a></li>
+                    <li><a href="#Contact" class="footer__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__title">FOLLOW</h2>
+                <a href="https://www.linkedin.com/in/gul-hassan-7b188b202/" class="footer__social" target="_blank"><i class='bx bxl-linkedin bx-tada-hover'></i></a>
+                <a href="https://github.com/Gulhassan786" class="footer__social" target="_blank"><i class='bx bxl-github bx-tada-hover'></i></a>
+                <a href="https://medium.com/@gulhassanh49"  class="footer__social" style="font-size: 25px;" target="_blank"><i class='bx bxl-medium bx-tada-hover'></i></a>
+            </div>
+            <!-- Copyright section -->
+            <div class="footer__copyright">
+                <p class="footer__text">&copy; 2024 Gul Hassan. All rights reserved.</p>
+            </div>
+
+        </div>
+
+        <!-- Copyright section -->
+    <!-- <div class="footer__copyright">
+        <p>&copy; 2024 Gul Hassan. All rights reserved.</p>
+    </div> -->
+
+    </footer>
+
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
